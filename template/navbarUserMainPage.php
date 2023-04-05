@@ -15,10 +15,10 @@
         
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+          Profil
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="usersPage.php">Profil Anzeigen</a></li>
+            <li><a class="dropdown-item" href="usersPage.php">Profil löschen</a></li>
             <li><a class="dropdown-item" href="profil.php">Profil bearbeiten</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="logout.php">Log Out</a></li>

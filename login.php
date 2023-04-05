@@ -64,7 +64,7 @@ if (isset($_POST["submit"])){
         echo"Login fehlgeschlagen";
     }
 }
-}
+
 ?>
 
 <form action="login.php" method="post">

@@ -61,6 +61,15 @@ if(isset($_POST["btUpdate"])){
 	exit;		
 	}
 
+	if(isset($_POST["btDelete"])){
+		$stmt = $mysql->prepare("DELETE FROM profiles WHERE user_id = ?");
+		$stmt->execute([$_SESSION["uId"]]);
+	
+	echo "<h3>Profil gelöscht</h3>";  
+	echo "<a href = 'usersPage.php'>zurueck</a>";
+	exit;		
+	}
+
 
 ?>
 	<p>Geben Sie hier Ihre Daten ein um Ihr Profil zu vervollständigen: </p>
@@ -80,6 +89,9 @@ if(isset($_POST["btUpdate"])){
 	<input type="text" id="tfbDate" name="tfbDate" placeholder="yyyy-mm-tt">
     <br>
 	<input type="submit" id="btProfilAbschicken" name="btProfilAbschicken" value="Absenden">	
+	<br>
+	<input type='submit' id='btDelete' name='btDelete' value='Profil löschen'>
+	<br>
 	</form>
 </div>
 	<?php include ('./template/footer.php');?>
