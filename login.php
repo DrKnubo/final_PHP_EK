@@ -75,6 +75,6 @@ if (isset($_POST["submit"])){
 </form>
 <br>
 <h4>Neu hier?</h4>
-<a href="register.php">Accout anlegen</a>
+<a href="register.php">Account anlegen</a>
     </div>
 <?php include ('./template/footer.php');?>
