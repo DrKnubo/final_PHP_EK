@@ -7,16 +7,8 @@ include ('./template/header.php');?>
 
 <title>Register</title>
 </head>
-<?php include ('./template/navbar.php');?>
-	
+<?php include ('./template/navbar.php');?>	
 <body>
-
-<div class="container">
-	<hr>
-	<h1>Geben Sie hier Ihre Daten ein um ein neues Konto zu registrieren: </h1>
-	<hr>
-	<br>
-
 <?php
 require_once("dbConnection.php");
 
@@ -30,8 +22,9 @@ if(isset($_POST["submit"])){
             $stmt = $mysql->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
             $hash = password_hash($_POST["pw"], PASSWORD_BCRYPT);            
             $stmt->execute([$_POST['username'], $_POST['email'], $hash]);
-            echo "Dein Account wurde angelegt<br>";
-            echo "<a href='login.php'>Zum Login</a>";
+            echo "<div class='container'><hr><h1>Dein Account wurde angelegt</h1><hr><br><br>";
+            echo "<a href='login.php'>Zum Login</a></div>";
+            include ('./template/footer.php');
             exit;
             } else {
                 echo "Die Passwörter stimmen nicht überein!";
@@ -40,10 +33,14 @@ if(isset($_POST["submit"])){
             echo "Der Username ist bereits vergeben";
         }
 }
-
 ?>
 
-<h1>Account erstellen</h1>
+<div class="container">
+<hr>
+<h1>Geben Sie hier Ihre Daten ein um ein neues Konto zu registrieren: </h1>
+<hr>
+<br>
+<h2>Account erstellen</h2>
 
 <form action="register.php" method="post">
     <input type="text" name="username" placeholder="Username" required><br>
