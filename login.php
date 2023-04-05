@@ -65,10 +65,32 @@ if (isset($_POST["submit"])){
 ?>
 
 <form action="login.php" method="post">
-    <input type="text" name="username" placeholder="Username" required><br>
-    <input type="password" name ="pw" placeholder="Passwort" required><br>
-    <button type="submit"  name="submit">Login</button><br>
-    <input type="checkbox" name="rememberme">angemeldet bleiben<br>    
+<div class="input-group mb-3">
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1">Username</span>
+</div>
+<input type="text" class="form-control" name="username" placeholder="" required><br>
+</div>
+<div class="input-group mb-3">
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1">Passwort</span>
+</div>
+<input type="password" class="form-control" name ="pw" placeholder="" required><br>
+</div>
+
+<div class="input-group mb-3">
+<div class="input-group-prepend">
+<div class="input-group-text">
+<input type="checkbox" name="rememberme" aria-label="Checkbox for following text input"> &nbsp Angemeldet bleiben
+</div>
+</div>
+
+<!--<input type="text" class="form-control" aria-label="Text input with checkbox" value = "angemeldet bleiben"> -->
+</div>
+<br>
+<button class="btn btn-primary" type="submit" name="submit">Login</button><br>
+    
+    <!--<input type="checkbox" name="rememberme">angemeldet bleiben<br>    -->
 </form>
 <br>
 <h4>Neu hier?</h4>
