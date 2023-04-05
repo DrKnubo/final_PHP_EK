@@ -37,7 +37,8 @@ $name = $_SESSION["username"];
 $profcount = $profstmt->rowCount();
 if ($profcount != 1)
 {
-    echo "<p>Dein Profil ist leer. <br> Du bearbeitest es <a href='profil.php'>hier</a>!</p>";
+    echo "<p>Dein Profil ist leer. <br> Du kannst es oben oder <a href='profil.php'>hier</a> bearbeiten bzw. löschen!</p>";
+    echo "<p>Den Logout findest du oben oder <a href='logout.php'>hier</a> !</p>";
     exit;
 
 }
