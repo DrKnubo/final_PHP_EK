@@ -39,6 +39,7 @@ if ($profcount != 1)
 {
     echo "<p>Dein Profil ist leer. <br> Du kannst es oben oder <a href='profil.php'>hier</a> bearbeiten bzw. löschen!</p>";
     echo "<p>Den Logout findest du oben oder <a href='logout.php'>hier</a> !</p>";
+    include ('./template/footer.php');
     exit;
 
 }

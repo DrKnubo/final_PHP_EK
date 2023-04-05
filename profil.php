@@ -40,6 +40,7 @@ if(isset($_POST["btProfilAbschicken"])){
 		echo"<h4><b>Profil bereits vorhanden!</b></h4>";
 		echo"<form action='profil.php' method='post'> <p>Überschreiben ?</p> <input type='submit' id='btUpdate' name='btUpdate' value='Update'></form>";
 		echo "<p> oder hier <a href = 'usersPage.php'>zurueck</a></p>";
+		include ('./template/footer.php');
 		exit;
 
 	} else {
@@ -47,6 +48,7 @@ if(isset($_POST["btProfilAbschicken"])){
 		$stmt->execute([$userEiDi, $_POST["tfvName"], $_POST["tfnName"], $_POST["tfpPath"], $_POST["tfbDate"]]);
 		echo "<h4><b>Profil erstellt!</b></h4>";
 		echo "<a href = 'usersPage.php'>zurueck</a>";
+		include ('./template/footer.php');
 		exit;		
 	}
 
@@ -58,6 +60,7 @@ if(isset($_POST["btUpdate"])){
 	
 	echo "<h3>Profil upgedatet</h3>";  
 	echo "<a href = 'usersPage.php'>zurueck</a>";
+	include ('./template/footer.php');
 	exit;		
 	}
 
@@ -67,6 +70,7 @@ if(isset($_POST["btUpdate"])){
 	
 	echo "<h3>Profil gelöscht</h3>";  
 	echo "<a href = 'usersPage.php'>zurueck</a>";
+	include ('./template/footer.php');
 	exit;		
 	}
 
@@ -90,6 +94,9 @@ if(isset($_POST["btUpdate"])){
     <br>
 	<input type="submit" id="btProfilAbschicken" name="btProfilAbschicken" value="Absenden">	
 	<br>
+	</form>
+	<br>
+	<form>
 	<input type='submit' id='btDelete' name='btDelete' value='Profil löschen'>
 	<br>
 	</form>
