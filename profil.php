@@ -2,16 +2,15 @@
 /*
 * By Stefan Schumacher
 */
-
 include ('./template/header.php');?>
 
 <title>Profil</title>
-	</head>
-	<?php include ('./template/navbar.php'); ?>
-	
-	<body>
-	<div class="container">
+</head>	
+<body>
+<?php include ('./template/navbar.php'); ?>
 
+<div class="container">
+	
 <?php require_once("dbConnection.php"); 
 session_start();
 if(!isset($_SESSION["username"])){
@@ -76,29 +75,29 @@ if(isset($_POST["btUpdate"])){
 
 
 ?>
-	<p>Geben Sie hier Ihre Daten ein um Ihr Profil zu vervollständigen: </p>
-	<form action="profil.php" method="post">		
-	<h3>Ihre Daten</h3>
-	<br>
-	<label for="tfvName">Vorname:</label>
-	<input type="text" id="tfvName" name="tfvName" placeholder="Vorname">
-	<br><br>
-	<label for="tfnName">Nachname:</label>
-	<input type="text" id="tfnName" name="tfnName" placeholder="Nachname">
-    <br><br>			
-	<label for="tfpPath">Bilderpfad:</label>
-	<input type="text" id="tfpPath" name="tfpPath" placeholder="zB: C:\Users\...\Pictures">
-    <br><br>
-	<label for="tfpPath">Geburtsdatum:</label>
-	<input type="text" id="tfbDate" name="tfbDate" placeholder="yyyy-mm-tt">
-    <br>
-	<input type="submit" id="btProfilAbschicken" name="btProfilAbschicken" value="Absenden">	
-	<br>
-	</form>
-	<br>
-	<form>
-	<input type='submit' id='btDelete' name='btDelete' value='Profil löschen'>
-	<br>
-	</form>
+<p>Geben Sie hier Ihre Daten ein um Ihr Profil zu vervollständigen: </p>
+<form action="profil.php" method="post">		
+<h3>Ihre Daten</h3>
+<br>
+<label for="tfvName">Vorname:</label>
+<input type="text" id="tfvName" name="tfvName" placeholder="Vorname">
+<br><br>
+<label for="tfnName">Nachname:</label>
+<input type="text" id="tfnName" name="tfnName" placeholder="Nachname">
+<br><br>			
+<label for="tfpPath">Bilderpfad:</label>
+<input type="text" id="tfpPath" name="tfpPath" placeholder="zB: C:\Users\...\Pictures">
+<br><br>
+<label for="tfpPath">Geburtsdatum:</label>
+<input type="text" id="tfbDate" name="tfbDate" placeholder="yyyy-mm-tt">
+<br>
+<input type="submit" id="btProfilAbschicken" name="btProfilAbschicken" value="Absenden">	
+<br>
+</form>
+<br>
+<form>
+<input type='submit' id='btDelete' name='btDelete' value='Profil löschen'>
+<br>
+</form>
 </div>
-	<?php include ('./template/footer.php');?>
+<?php include ('./template/footer.php');?>

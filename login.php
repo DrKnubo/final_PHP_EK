@@ -6,12 +6,9 @@
 include ('./template/header.php');?>
 <title>Login</title>
 </head>
-<?php include ('./template/navbar.php');?>
-
 <body>
+<?php include ('./template/navbar.php');?>
 <div class="container">
-
-
 <hr>
 <h1>Geben Sie hier Ihre Zugangsdaten ein:</h1>
 <hr>
@@ -76,5 +73,5 @@ if (isset($_POST["submit"])){
 <br>
 <h4>Neu hier?</h4>
 <a href="register.php">Account anlegen</a>
-    </div>
+</div>
 <?php include ('./template/footer.php');?>

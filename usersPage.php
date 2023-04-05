@@ -3,31 +3,27 @@
 * By Stefan Schumacher
 */
 
+include ('./template/header.php');?>
+<title>Hauptseite</title>
+</head>   
+<body>
+<?php include ('./template/navbarUserMainPage.php');
 session_start();
 if(!isset($_SESSION["username"])){
     header("Location: login.php");
     exit;
 }
-
 require_once("dbConnection.php");
-
 $stmt = $mysql->prepare("SELECT * FROM users WHERE username = ?");
 $stmt->execute([$_SESSION['username']]);
 $userInhalt = $stmt->fetch();
 $profstmt = $mysql->prepare("SELECT * FROM profiles WHERE user_id = ?");
 $profstmt->execute([$_SESSION['uId']]);
 $profileInhalt = $profstmt->fetch();
-?>
 
-<?php include ('./template/header.php');?>
-
-<title>Hauptseite</title>
-</head>
-<?php include ('./template/navbarUserMainPage.php');
 $name = $_SESSION["username"];
 ?>
-   
-<body>
+
 <div class="container">
 <hr>
 <?php echo "<h1>Willkommen auf deiner Seite $name !</h1>"; ?>

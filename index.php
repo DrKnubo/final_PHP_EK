@@ -4,11 +4,11 @@
 */
 
 include ('./template/header.php');?>
-
 <title>Startseite</title>
 </head>	
-<?php include ('./template/navbar.php');?>
+
 <body>
+<?php include ('./template/navbar.php');?>
 <div class="container">
 <hr>
 <h1>Willkommen auf der Startseite !</h1>

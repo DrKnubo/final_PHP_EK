@@ -7,9 +7,10 @@ include ('./template/header.php');?>
 
 <title>Register</title>
 </head>
-<?php include ('./template/navbar.php');?>	
+
 <body>
-<?php
+<?php include ('./template/navbar.php');
+
 require_once("dbConnection.php");
 
 if(isset($_POST["submit"])){
