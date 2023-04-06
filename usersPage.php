@@ -40,8 +40,6 @@ if ($profcount != 1)
 
 }
 ?>
-
-<h3> Bitte wählen Sie: </h3>
 <br>
 <h2>Deine Profildaten lauten:</h2>
 <hr>
@@ -49,15 +47,28 @@ if ($profcount != 1)
 echo ('<p>Vorname: ' . $profileInhalt["first_name"] . '</p>');
 echo ('<p>Nachname: ' . $profileInhalt["last_name"] . '</p>');
 echo ('<p>Geboren am: ' . $profileInhalt["birth_date"] . '</p>'); 
-echo ('<p>Picture: ' . $profileInhalt["picture_path"] . '</p>');
 echo ('<p>email: ' . $userInhalt["email"] . '</p>');
 ?>
 
+<?php
+     
+     $picstmt = $mysql->prepare('SELECT picture_path FROM profiles WHERE user_id = ?');
+     $picstmt->execute([$_SESSION['uId']]);
+     $zwimage = $picstmt->fetchAll();
+     $image = $zwimage[0];   
+     ?>     
+      
+     <img src=<?=$image['picture_path'] ?> title=<?=$profileInhalt['first_name'] ?> width='200' height='200'> 
+     <?php echo ('<p>Bild Pfad in Textform: ' . $profileInhalt["picture_path"] . '</p>'); ?>
+  
+     <hr>  
 <br><br>
-<p>Dein Profil bearbeitest du <a href="profil.php">hier</a>!</p>
+
+<p>Du kannst dein Profil oben oder <a href='profil.php'>hier</a> bearbeiten bzw. löschen!</p>
+<br>
+<p>Den Logout findest du oben oder <a href='logout.php'>hier</a> !</p>
 <br><br>
 <hr>		
-<p>Hier gehts <a href="logout.php">raus</a> !</p>
 <br>
 </div>
 <?php include ('./template/footer.php');?>

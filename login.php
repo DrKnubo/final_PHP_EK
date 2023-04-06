@@ -81,18 +81,15 @@ if (isset($_POST["submit"])){
 <div class="input-group mb-3">
 <div class="input-group-prepend">
 <div class="input-group-text">
-<input type="checkbox" name="rememberme" aria-label="Checkbox for following text input"> &nbsp Angemeldet bleiben
+<input type="checkbox" name="rememberme" aria-label="Checkbox for following text input"> &nbsp; Angemeldet bleiben
 </div>
 </div>
-
-<!--<input type="text" class="form-control" aria-label="Text input with checkbox" value = "angemeldet bleiben"> -->
 </div>
 <br>
-<button class="btn btn-primary" type="submit" name="submit">Login</button><br>
-    
-    <!--<input type="checkbox" name="rememberme">angemeldet bleiben<br>    -->
+<button class="btn btn-primary" type="submit" name="submit">Login</button><br>   
 </form>
 <br>
+<hr>
 <h4>Neu hier?</h4>
 <a href="register.php">Account anlegen</a>
 </div>
