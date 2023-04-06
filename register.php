@@ -41,17 +41,38 @@ if(isset($_POST["submit"])){
 <h1>Geben Sie hier Ihre Daten ein um ein neues Konto zu registrieren: </h1>
 <hr>
 <br>
-<h2>Account erstellen</h2>
-
 <form action="register.php" method="post">
-    <input type="text" name="username" placeholder="Username" required><br>
-    <input type="email" name="email" placeholder="E-Mail" required><br>
-    <input type="password" name ="pw" placeholder="Passwort" required><br>
-    <input type="password" name ="pw2" placeholder="Passwort wiederholen" required><br>
-    <button type="submit"  name="submit">Register</button><br>
-       
+<div class="input-group mb-3">
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1">Username</span>
+</div>
+<input type="text" class="form-control" name="username" placeholder="" required><br>
+</div>
+<div class="input-group mb-3">
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1">E-Mail</span>
+</div>
+<input type="email" class="form-control" name="email" placeholder="" required><br>
+</div>
+<div class="input-group mb-3">
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1">Passwort</span>
+</div>
+<input type="password" class="form-control" name="pw" placeholder="" required><br>
+</div>
+<div class="input-group mb-3">
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1">Passwort wiederholen</span>
+</div>
+<input type="password" class="form-control" name="pw2" placeholder="" required><br>
+</div>
+<br>
+<button class="btn btn-primary" type="submit" name="submit">Register</button><br>   
 </form>
 <br>
-<a href="login.php">Bereits registriert?</a>
+<hr>
+<h4>Bereits registriert?</h4>
+<a href="login.php">Login</a>
+<br>
 </div>
 <?php include ('./template/footer.php');?>

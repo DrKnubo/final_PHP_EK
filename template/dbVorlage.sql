@@ -32,7 +32,7 @@ CREATE TABLE `profiles` (
   `user_id` int(11) NOT NULL,
   `first_name` varchar(255) DEFAULT NULL,
   `last_name` varchar(255) DEFAULT NULL,
-  `picture_path` varchar(255) DEFAULT NULL,
+  `picture_path` varchar(255) NOT NULL,
   `birth_date` date DEFAULT NULL,
   `created` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
