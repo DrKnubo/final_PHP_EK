@@ -92,7 +92,7 @@ $statement = $mysql->prepare($stmt);
 	$file_extension = strtolower($file_extension);
 	
 	// Valid image extension
-	$valid_extension = array("png","jpeg","jpg");
+	$valid_extension = array("png","jpeg","jpg","bmp");
 	
 	if(in_array($file_extension, $valid_extension)) {
 
