@@ -110,11 +110,13 @@ $statement = $mysql->prepare($stmt);
   
 
 if($count != 0 && $countPic != 0){
-	echo"<h4><b>Profil bereits komplett!</b></h4>";
-	echo"<br><br>";	
+	echo"<br>";
+	echo"<h3><b>Sie haben alle benötigten Daten bereits im Profil erfasst!</b></h3>";
+	echo"<h4>Sie haben folgende Optionen:</h4>";
+	echo"<br><hr><br>";	
 	echo"<h4>Sie können Ihr Profil löschen</h4>";
 	echo"<br><form action='profil.php' method='post'><input type='submit' id='btDelete' name='btDelete' value='Profil löschen'><br></form>";	
-	echo"<br><br>";	
+	echo"<br><hr><br>";	
 	echo"<h4>Sie können Ihr Profil bearbeiten</h4>";
 	echo'
 	<form action="profil.php" method="post">	
@@ -139,7 +141,7 @@ if($count != 0 && $countPic != 0){
 	<br>';
 	
 	echo"<form action='profil.php' method='post'><input type='submit' id='btUpdate' name='btUpdate' value='Update'></form>";
-	echo"<br><br>";
+	echo"<br><hr><br>";
 	echo"<h4>Sie können Ihr Bild ändern</h4>";
 	echo'<form action="profil.php" method="post" enctype="multipart/form-data">
 	<div class="input-group mb-3">
@@ -150,9 +152,9 @@ if($count != 0 && $countPic != 0){
 	<input type="file" class="custom-file-input" name="imgUploadFile">
 	</div>
 	<input type="submit" id="submitIMG" name="submitIMG" value="Bild hochladen">
-	</div>';		
+	</div><hr>';		
 	
-	echo "<br><h4> Oder hier <a href = 'usersPage.php'>zurück</a></h4>";
+	echo "<br><h4>Oben oder <a href = 'usersPage.php'> hier</a> geht es zurück</h4>";
 	include ('./template/footer.php');
 	exit;
 } else if ($count != 0 && $countPic == 0){
@@ -170,7 +172,7 @@ if($count != 0 && $countPic != 0){
 	<input type="submit" id="submitIMG" name="submitIMG" value="Bild hochladen">
 	</div>';		
 	
-	echo "<br><p> oder hier <a href = 'usersPage.php'>zurueck</a></p>";
+	echo "<br><p>oder hier <a href = 'usersPage.php'>zurueck</a></p>";
 	include ('./template/footer.php');
 	exit;
 }
