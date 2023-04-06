@@ -13,6 +13,23 @@ include ('./template/header.php');?>
 
 require_once("dbConnection.php");
 
+
+if (isset($_COOKIE["login_cookie"])){
+    $stmt = $mysql->prepare("SELECT * FROM users WHERE rememberToken = ?");
+    $stmt->execute([$_COOKIE["login_cookie"]]);
+
+    if($stmt->rowCount()==1){
+        $row = $stmt->fetch();
+
+        session_start();
+        $_SESSION["username"] = $row["username"];
+        $_SESSION["uId"] = $row["id"];
+        header("Location: usersPage.php");        
+    } else {
+        setcookie("login_cookie", "", time() -1);
+    }
+}
+
 if(isset($_POST["submit"])){
     $stmt = $mysql->prepare("SELECT * FROM users WHERE username = ?");
     $stmt->execute([$_POST['username']]);

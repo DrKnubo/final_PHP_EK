@@ -4,7 +4,7 @@
 */
 
 include ('./template/header.php');?>
-<title>Hauptseite</title>
+<title>Deine Seite</title>
 </head>   
 <body>
 <?php include ('./template/navbarUserMainPage.php');
